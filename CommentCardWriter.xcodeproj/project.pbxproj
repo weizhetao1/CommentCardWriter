@@ -14,6 +14,10 @@
 		C5BD48D127AD4C5300D55FFD /* CommentCardWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48D027AD4C5300D55FFD /* CommentCardWriterTests.swift */; };
 		C5BD48DB27AD4C5300D55FFD /* CommentCardWriterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48DA27AD4C5300D55FFD /* CommentCardWriterUITests.swift */; };
 		C5BD48DD27AD4C5300D55FFD /* CommentCardWriterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48DC27AD4C5300D55FFD /* CommentCardWriterUITestsLaunchTests.swift */; };
+		C5BD48EB27AD4D4A00D55FFD /* CommentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48EA27AD4D4A00D55FFD /* CommentData.swift */; };
+		C5BD48ED27AD4E3F00D55FFD /* CommentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48EC27AD4E3F00D55FFD /* CommentGenerator.swift */; };
+		C5BD48EF27AD50D000D55FFD /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48EE27AD50D000D55FFD /* Comment.swift */; };
+		C5BD48F227AD545E00D55FFD /* IntPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48F127AD545E00D55FFD /* IntPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		C5BD48D627AD4C5300D55FFD /* CommentCardWriterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommentCardWriterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD48DA27AD4C5300D55FFD /* CommentCardWriterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardWriterUITests.swift; sourceTree = "<group>"; };
 		C5BD48DC27AD4C5300D55FFD /* CommentCardWriterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardWriterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C5BD48EA27AD4D4A00D55FFD /* CommentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentData.swift; sourceTree = "<group>"; };
+		C5BD48EC27AD4E3F00D55FFD /* CommentGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentGenerator.swift; sourceTree = "<group>"; };
+		C5BD48EE27AD50D000D55FFD /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		C5BD48F127AD545E00D55FFD /* IntPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +102,9 @@
 		C5BD48BE27AD4C5100D55FFD /* CommentCardWriter */ = {
 			isa = PBXGroup;
 			children = (
+				C5BD48F027AD533600D55FFD /* View */,
+				C5BD48E927AD4CD100D55FFD /* Model */,
 				C5BD48BF27AD4C5100D55FFD /* CommentCardWriterApp.swift */,
-				C5BD48C127AD4C5100D55FFD /* ContentView.swift */,
 				C5BD48C327AD4C5300D55FFD /* Assets.xcassets */,
 				C5BD48C527AD4C5300D55FFD /* Preview Content */,
 			);
@@ -125,6 +134,25 @@
 				C5BD48DC27AD4C5300D55FFD /* CommentCardWriterUITestsLaunchTests.swift */,
 			);
 			path = CommentCardWriterUITests;
+			sourceTree = "<group>";
+		};
+		C5BD48E927AD4CD100D55FFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5BD48EA27AD4D4A00D55FFD /* CommentData.swift */,
+				C5BD48EC27AD4E3F00D55FFD /* CommentGenerator.swift */,
+				C5BD48EE27AD50D000D55FFD /* Comment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5BD48F027AD533600D55FFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5BD48C127AD4C5100D55FFD /* ContentView.swift */,
+				C5BD48F127AD545E00D55FFD /* IntPicker.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5BD48EF27AD50D000D55FFD /* Comment.swift in Sources */,
 				C5BD48C227AD4C5100D55FFD /* ContentView.swift in Sources */,
+				C5BD48EB27AD4D4A00D55FFD /* CommentData.swift in Sources */,
+				C5BD48F227AD545E00D55FFD /* IntPicker.swift in Sources */,
 				C5BD48C027AD4C5100D55FFD /* CommentCardWriterApp.swift in Sources */,
+				C5BD48ED27AD4E3F00D55FFD /* CommentGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
