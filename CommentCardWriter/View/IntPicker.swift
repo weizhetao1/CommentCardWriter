@@ -13,11 +13,14 @@ struct IntPicker: View {
     let numOfInt: Int
     var body: some View {
         HStack {
-            Text("\(lineName)")
+            Text(lineName)
             Spacer()
-            ForEach(0..<numOfInt) { num in
-                Button("\(String(num))", action: { self.property = num })
-            }
+            Picker("\(lineName)", selection: $property) {
+                ForEach(0..<numOfInt) { num in
+                    Text("\(String(num))")
+                }
+            }.frame(width: 150)
+            .pickerStyle(.segmented)
         }
     }
 }

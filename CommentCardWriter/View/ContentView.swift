@@ -10,19 +10,39 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var commentData = CommentData()
     @State var commentDisplayed = false
-    @State var comment = ""
+    @State var commentText = ""
+    @State var subjects = ["Applied Maths", "Computer Science", "Pure Maths", "Physics", "Chemistry"]
     var body: some View {
         VStack {
-            IntPicker(property: $commentData.enjoyment, lineName: "enjoyment", numOfInt: 5)
-            Text("\(String(commentData.enjoyment))")
-            Button("Create Comment", action: { self.displayComment() })
+            Form {
+                Section("Subject"){
+                    Picker("Subject", selection: $commentData.subject) {
+                        ForEach(0..<subjects.count) { i in
+                            Text(subjects[i])
+                        }
+                    }.pickerStyle(.menu)
+                }
+                Section("Comment Data") {
+                    IntPicker(property: $commentData.enjoyment, lineName: "enjoyment", numOfInt: 5)
+                    IntPicker(property: $commentData.effort, lineName: "effort", numOfInt: 5)
+                    EnterTextView(property: $commentData.topic, lineName: "topic")
+                    IntPicker(property: $commentData.topicUnderstanding, lineName: "understanding of topic", numOfInt: 5)
+                    EnterTextView(property: $commentData.weakness, lineName: "weakness")
+                    IntPicker(property: $commentData.howWeak, lineName: "how weak", numOfInt: 3)
+                }
+                Button("Create Comment", action: { self.displayComment() })
+                if commentDisplayed {
+                    Text("\(commentText)")
+                }
+            }
         }
     }
     
     func displayComment() {
         self.commentDisplayed = true
-        var commentGenerator = CommentGenerator(data: commentData)
-        self.comment = "hagagag"
+        let commentGenerator = CommentGenerator(data: commentData)
+        let comment = commentGenerator.generateComment()
+        self.commentText = comment.entireComment()
     }
 }
 

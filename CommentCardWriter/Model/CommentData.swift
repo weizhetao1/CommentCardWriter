@@ -14,6 +14,7 @@ class CommentData: ObservableObject {
     @Published var topicUnderstanding: Int
     @Published var weakness: String
     @Published var howWeak: Int
+    @Published var subject: String
     
     init() {
         self.enjoyment = 2
@@ -22,5 +23,6 @@ class CommentData: ObservableObject {
         self.topicUnderstanding = 2
         self.weakness = ""
         self.howWeak = 1
+        self.subject = "Maths"
     }
 }
