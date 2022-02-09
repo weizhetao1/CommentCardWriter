@@ -18,7 +18,7 @@ struct ContentView: View {
                 Section("Subject"){
                     Picker("Subject", selection: $commentData.subject) {
                         ForEach(0..<subjects.count) { i in
-                            Text(subjects[i])
+                            Text("\(subjects[i])")
                         }
                     }.pickerStyle(.menu)
                 }
