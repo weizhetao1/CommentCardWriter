@@ -10,17 +10,25 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var commentData = CommentData()
     @State var commentDisplayed = false
-    @State var commentText = ""
-    @State var subjects = ["Applied Maths", "Computer Science", "Pure Maths", "Physics", "Chemistry"]
+    @StateObject var comment = Comment(date: Date(), enjoymentAndEffort: "default", recentTopic: "default", weakness: "default", subject: "default")
+    @State var addingSubject = false
+    @State var subjectAdded = ""
+    @State var editingComment = false
     var body: some View {
         VStack {
             Form {
                 Section("Subject"){
                     Picker("Subject", selection: $commentData.subject) {
-                        ForEach(0..<subjects.count) { i in
-                            Text("\(subjects[i])")
+                        ForEach(0..<commentData.subjects.count) { i in
+                            Text("\(commentData.subjects[i])")
                         }
                     }.pickerStyle(.menu)
+                    if !addingSubject {
+                        Button("+ Subject", action: { addingSubject = true })
+                    } else {
+                        TextField("Enter New Subject", text: $subjectAdded)
+                        Button("Done", action: { self.finishAddSubject() })
+                    }
                 }
                 Section("Comment Data") {
                     IntPicker(property: $commentData.enjoyment, lineName: "enjoyment", numOfInt: 5)
@@ -32,7 +40,9 @@ struct ContentView: View {
                 }
                 Button("Create Comment", action: { self.displayComment() })
                 if commentDisplayed {
-                    Text("\(commentText)")
+                    TextEditor(text: $comment.entireComment)
+                        .disabled(!self.editingComment)
+                    Toggle("Editing Comment", isOn: $editingComment)
                 }
             }
         }
@@ -41,8 +51,12 @@ struct ContentView: View {
     func displayComment() {
         self.commentDisplayed = true
         let commentGenerator = CommentGenerator(data: commentData)
-        let comment = commentGenerator.generateComment()
-        self.commentText = comment.entireComment()
+        self.comment.mutate(comment: commentGenerator.generateComment())
+    }
+    
+    func finishAddSubject() {
+        self.commentData.subjects.append(subjectAdded)
+        self.addingSubject = false
     }
 }
 

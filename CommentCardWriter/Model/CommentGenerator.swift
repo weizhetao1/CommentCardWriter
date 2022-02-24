@@ -15,11 +15,11 @@ class CommentGenerator {
     var data: CommentData
     
     func generateComment() -> Comment {
-        let sentence1 = "In the past few weeks, I am \(enjoymentWords[data.enjoyment]) the \(data.subject) lessons and I am working \(effortWords[data.effort])."
+        let sentence1 = "In the past few weeks, I am \(enjoymentWords[data.enjoyment]) the \(data.subjects[data.subject]) lessons and I am working \(effortWords[data.effort])."
         let sentence2 = "For the recent topic of \(data.topic), I \(understandingWords[data.topicUnderstanding]) what is going on."
         let sentence3 = "I think my weak area is \(data.weakness), for which \(weaknessWords[data.howWeak])."
         
-        return Comment(date: Date(), enjoymentAndEffort: sentence1, recentTopic: sentence2, weakness: sentence3, subject: data.subject)
+        return Comment(date: Date(), enjoymentAndEffort: sentence1, recentTopic: sentence2, weakness: sentence3, subject: data.subjects[data.subject])
     }
     
     init(data: CommentData) {
