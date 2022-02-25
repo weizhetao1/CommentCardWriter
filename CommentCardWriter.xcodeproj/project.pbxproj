@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C50AAE1B27B3CC29007464A0 /* EnterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50AAE1A27B3CC29007464A0 /* EnterTextView.swift */; };
+		C57512CF27C8E993002B6E84 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57512CE27C8E992002B6E84 /* RootTabView.swift */; };
+		C57512D127C8E9A5002B6E84 /* PastCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57512D027C8E9A5002B6E84 /* PastCommentView.swift */; };
+		C57512D327C8EB43002B6E84 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57512D227C8EB43002B6E84 /* StateController.swift */; };
+		C57512D627C8EF62002B6E84 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57512D527C8EF62002B6E84 /* Date.swift */; };
 		C5BD48C027AD4C5100D55FFD /* CommentCardWriterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48BF27AD4C5100D55FFD /* CommentCardWriterApp.swift */; };
-		C5BD48C227AD4C5100D55FFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48C127AD4C5100D55FFD /* ContentView.swift */; };
+		C5BD48C227AD4C5100D55FFD /* GeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48C127AD4C5100D55FFD /* GeneratorView.swift */; };
 		C5BD48C427AD4C5300D55FFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5BD48C327AD4C5300D55FFD /* Assets.xcassets */; };
 		C5BD48C727AD4C5300D55FFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5BD48C627AD4C5300D55FFD /* Preview Assets.xcassets */; };
 		C5BD48D127AD4C5300D55FFD /* CommentCardWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD48D027AD4C5300D55FFD /* CommentCardWriterTests.swift */; };
@@ -40,9 +44,13 @@
 
 /* Begin PBXFileReference section */
 		C50AAE1A27B3CC29007464A0 /* EnterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTextView.swift; sourceTree = "<group>"; };
+		C57512CE27C8E992002B6E84 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		C57512D027C8E9A5002B6E84 /* PastCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastCommentView.swift; sourceTree = "<group>"; };
+		C57512D227C8EB43002B6E84 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		C57512D527C8EF62002B6E84 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C5BD48BC27AD4C5100D55FFD /* CommentCardWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommentCardWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD48BF27AD4C5100D55FFD /* CommentCardWriterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardWriterApp.swift; sourceTree = "<group>"; };
-		C5BD48C127AD4C5100D55FFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C5BD48C127AD4C5100D55FFD /* GeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorView.swift; sourceTree = "<group>"; };
 		C5BD48C327AD4C5300D55FFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5BD48C627AD4C5300D55FFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C5BD48CC27AD4C5300D55FFD /* CommentCardWriterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommentCardWriterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C57512D427C8EF34002B6E84 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C57512D527C8EF62002B6E84 /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C5BD48B327AD4C5100D55FFD = {
 			isa = PBXGroup;
 			children = (
@@ -104,9 +120,11 @@
 		C5BD48BE27AD4C5100D55FFD /* CommentCardWriter */ = {
 			isa = PBXGroup;
 			children = (
+				C57512D427C8EF34002B6E84 /* Extensions */,
 				C5BD48F027AD533600D55FFD /* View */,
 				C5BD48E927AD4CD100D55FFD /* Model */,
 				C5BD48BF27AD4C5100D55FFD /* CommentCardWriterApp.swift */,
+				C57512D227C8EB43002B6E84 /* StateController.swift */,
 				C5BD48C327AD4C5300D55FFD /* Assets.xcassets */,
 				C5BD48C527AD4C5300D55FFD /* Preview Content */,
 			);
@@ -151,9 +169,11 @@
 		C5BD48F027AD533600D55FFD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C5BD48C127AD4C5100D55FFD /* ContentView.swift */,
+				C5BD48C127AD4C5100D55FFD /* GeneratorView.swift */,
 				C5BD48F127AD545E00D55FFD /* IntPicker.swift */,
 				C50AAE1A27B3CC29007464A0 /* EnterTextView.swift */,
+				C57512CE27C8E992002B6E84 /* RootTabView.swift */,
+				C57512D027C8E9A5002B6E84 /* PastCommentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,12 +309,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5BD48EF27AD50D000D55FFD /* Comment.swift in Sources */,
-				C5BD48C227AD4C5100D55FFD /* ContentView.swift in Sources */,
+				C5BD48C227AD4C5100D55FFD /* GeneratorView.swift in Sources */,
+				C57512D127C8E9A5002B6E84 /* PastCommentView.swift in Sources */,
+				C57512CF27C8E993002B6E84 /* RootTabView.swift in Sources */,
 				C5BD48EB27AD4D4A00D55FFD /* CommentData.swift in Sources */,
 				C5BD48F227AD545E00D55FFD /* IntPicker.swift in Sources */,
 				C5BD48C027AD4C5100D55FFD /* CommentCardWriterApp.swift in Sources */,
 				C5BD48ED27AD4E3F00D55FFD /* CommentGenerator.swift in Sources */,
+				C57512D627C8EF62002B6E84 /* Date.swift in Sources */,
 				C50AAE1B27B3CC29007464A0 /* EnterTextView.swift in Sources */,
+				C57512D327C8EB43002B6E84 /* StateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

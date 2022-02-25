@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct GeneratorView: View {
+    @EnvironmentObject var state: StateController
     @StateObject var commentData = CommentData()
     @State var commentDisplayed = false
     @StateObject var comment = Comment(date: Date(), enjoymentAndEffort: "default", recentTopic: "default", weakness: "default", subject: "default")
@@ -43,6 +44,7 @@ struct ContentView: View {
                     TextEditor(text: $comment.entireComment)
                         .disabled(!self.editingComment)
                     Toggle("Editing Comment", isOn: $editingComment)
+                    Button("Save", action: { self.saveComment() })
                 }
             }
         }
@@ -59,10 +61,16 @@ struct ContentView: View {
         self.addingSubject = false
         subjectAdded = ""
     }
+    
+    func saveComment() {
+        self.state.pastComments.append(comment)
+        self.commentDisplayed = false
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GeneratorView()
+            .environmentObject(StateController())
     }
 }

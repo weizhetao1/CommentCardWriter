@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Comment: ObservableObject {
+class Comment: ObservableObject, Identifiable {
     var dateCreated: Date
     var enjoymentAndEffort: String
     var recentTopic: String
