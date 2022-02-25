@@ -21,7 +21,7 @@ struct ContentView: View {
                     Picker("Subject", selection: $commentData.subject) {
                         ForEach(0..<commentData.subjects.count) { i in
                             Text("\(commentData.subjects[i])")
-                        }
+                        }.id(commentData.subjects.count)
                     }.pickerStyle(.menu)
                     if !addingSubject {
                         Button("+ Subject", action: { addingSubject = true })
@@ -57,6 +57,7 @@ struct ContentView: View {
     func finishAddSubject() {
         self.commentData.subjects.append(subjectAdded)
         self.addingSubject = false
+        subjectAdded = ""
     }
 }
 
